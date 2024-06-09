@@ -1,0 +1,33 @@
+.gifts {
+  height: calc(100vh - $header-height);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  li {
+    img {
+      display: block;
+      width: 20vw;
+      object-fit: contain;
+
+      cursor: pointer;
+    }
+  }
+}
+
+// in dialog
+.gift {
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    display: block;
+    width: 50vw;
+    object-fit: contain;
+  }
+  a {
+    padding: 10px 0;
+    text-decoration: underline;
+  }
+}
