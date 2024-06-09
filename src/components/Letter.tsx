@@ -1,6 +1,6 @@
 interface LetterProps {}
 
-const Letter = (props: LetterProps) => {
+const Letter = (_: LetterProps) => {
   return <></>
 }
 

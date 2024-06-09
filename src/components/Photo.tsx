@@ -3,7 +3,7 @@ import { useCallback, useRef, useState } from 'react'
 import Webcam from 'react-webcam'
 interface PhotoProps {}
 
-const Photo = (props: PhotoProps) => {
+const Photo = (_: PhotoProps) => {
   const webcamRef = useRef<any>(null)
   const [imgSrc, setImgSrc] = useState(null)
 

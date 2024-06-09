@@ -1,6 +1,6 @@
 interface SongProps {}
 
-const Song = (props: SongProps) => {
+const Song = (_: SongProps) => {
   return <></>
 }
 
