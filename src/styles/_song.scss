@@ -1,0 +1,8 @@
+.song {
+  width: 100%;
+  height: calc(100vh - $header-height);
+
+  .song__player {
+    margin-top: calc((100vh - $header-height) / 2 - 200px);
+  }
+}

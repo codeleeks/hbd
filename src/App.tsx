@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <PhotoPage />,
       },
       {
-        path: 'song',
+        path: 'video',
         element: <SongPage />,
       },
     ],

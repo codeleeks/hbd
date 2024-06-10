@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 interface HeaderProps {}
 
-// home, gift, letters, photo, song
+// home, gift, letters, photo, video
 const Header = (_: HeaderProps) => {
   return (
     <header>
@@ -12,7 +12,7 @@ const Header = (_: HeaderProps) => {
         <NavLink to='gift'>Gift</NavLink>
         <NavLink to='letter'>Letter</NavLink>
         <NavLink to='photo'>Photo</NavLink>
-        <NavLink to='song'>Song</NavLink>
+        <NavLink to='video'>Video</NavLink>
       </nav>
     </header>
   )

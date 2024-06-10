@@ -27,25 +27,6 @@ const Photo = (_: PhotoProps) => {
     }, 10000)
   }, [webcamRef, modalRef, setImgSrc, setCountdown])
 
-  const download = () => {
-    const imageEl = document.getElementById('photo__result')!
-
-    function downloadURI(uri: string, name: string) {
-      var link = document.createElement('a')
-      link.download = name
-      link.href = uri
-      document.body.appendChild(link)
-      link.click()
-    }
-
-    html2canvas(imageEl).then(function (canvas) {
-      var myImage = canvas.toDataURL()
-      downloadURI(
-        myImage,
-        `희주생일기념사진(${new Date().toLocaleString()}).png`
-      )
-    })
-  }
   return (
     <div className='photo inner'>
       <h2 className='font-kangwon-bold text-lg'>
@@ -63,12 +44,7 @@ const Photo = (_: PhotoProps) => {
       <Modal title='' ref={modalRef}>
         <div className='photo__result'>
           {imgSrc && (
-            <>
-              <img id='photo__result' src={imgSrc} alt='생일 기념 사진' />
-              <button className='photo__result__download' onClick={download}>
-                이미지 다운로드 하기
-              </button>
-            </>
+            <img id='photo__result' src={imgSrc} alt='생일 기념 사진' />
           )}
         </div>
       </Modal>
