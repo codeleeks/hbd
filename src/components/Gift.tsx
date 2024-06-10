@@ -1,8 +1,6 @@
 import giftOpenImg from '../assets/gift-open.png'
 import giftNotOpenImg from '../assets/gift-not-open.png'
 import jillbyjillBackpack from '../assets/jillbyjill_backpack.jpg'
-import wonderrustBackpack from '../assets/wonderrust-backpack.png'
-import zigzagEaring from '../assets/zigzag-earing.png'
 import malenka from '../assets/malenka.png'
 import { useRef, useState } from 'react'
 import Modal, { ModalHandle } from './Modal'
