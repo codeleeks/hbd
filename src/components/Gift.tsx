@@ -52,7 +52,7 @@ const GiftItem = (props: GittItemProps) => {
 interface GiftProps {}
 const Gift = (_: GiftProps) => {
   const modalRef = useRef<ModalHandle>(null)
-  const [openedGiftId, setOpenedGiftId] = useState<number>(0)
+  const [openedGiftId, setOpenedGiftId] = useState<number>(-1)
   const clickHandler = (id: number) => {
     setOpenedGiftId(id)
     modalRef.current?.open()
@@ -65,10 +65,15 @@ const Gift = (_: GiftProps) => {
   return (
     <ul className='gifts inner'>
       {gifts}
-      <Modal title={giftContents[openedGiftId].title} ref={modalRef}>
+      <Modal
+        title={openedGiftId > -1 ? giftContents[openedGiftId].title : ''}
+        ref={modalRef}
+      >
         <div className='gift'>
-          <img src={giftContents[openedGiftId].src} alt='생일 선물' />
-          {giftContents[openedGiftId].url && (
+          {openedGiftId > -1 && (
+            <img src={giftContents[openedGiftId].src} alt='생일 선물' />
+          )}
+          {openedGiftId > -1 && giftContents[openedGiftId].url && (
             <a href={giftContents[openedGiftId].url} target='_blank'>
               자세히 보기
             </a>

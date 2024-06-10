@@ -14,7 +14,6 @@ const images = Object.values(
 interface HomeProps {}
 const Home = (_: HomeProps) => {
   const modalRef = useRef<ModalHandle>(null)
-  console.log(images)
 
   const clickHandler = (_: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     modalRef.current?.open()

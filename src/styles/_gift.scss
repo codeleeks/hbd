@@ -23,7 +23,8 @@
   align-items: center;
   img {
     display: block;
-    width: 50vw;
+    width: 100%;
+    max-width: 50vw;
     object-fit: contain;
   }
   a {
