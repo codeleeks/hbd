@@ -1,0 +1,46 @@
+.photo {
+  max-height: calc(100vh - $header-height);
+  h2 {
+    font-size: 28px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .photo__action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: 40px;
+      text-align: center;
+      font-family: 700;
+      color: #00a6ed;
+    }
+
+    video {
+      width: 100%;
+      max-width: 1200px;
+    }
+    button {
+      width: 80px;
+      height: 80px;
+
+      margin-top: 20px;
+      border-radius: 50%;
+      border: 1px solid #00a6ed;
+    }
+  }
+}
+
+.photo__result {
+  width: 100%;
+  img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+  }
+  .photo__result__download {
+    display: block;
+    margin: 10px auto;
+  }
+}

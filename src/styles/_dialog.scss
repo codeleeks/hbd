@@ -35,13 +35,6 @@ dialog {
     flex-grow: 0;
     display: flex;
     justify-content: flex-end;
-    button {
-      font-family: 'Hi Melody', Inter, system-ui, Avenir, Helvetica, Arial,
-        sans-serif;
-      font-size: 1em;
-      border: none;
-      background-color: transparent;
-    }
   }
   &::backdrop {
     background-color: rgba(10, 10, 10, 0.4);

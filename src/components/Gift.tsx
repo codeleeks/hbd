@@ -14,14 +14,9 @@ const giftContents = [
     url: 'https://www.musinsa.com/app/goods/3781416',
   },
   {
-    src: wonderrustBackpack,
-    title: '룰루레몬 원더러스트 백팩',
-    url: 'https://www.lululemon.co.kr/ko-kr/p/%EC%9B%90%EB%8D%94%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%B0%B1%ED%8C%A9-*%EB%AF%B8%EB%8B%88-14l/145301564.html',
-  },
-  {
-    src: zigzagEaring,
-    title: '귀걸이',
-    url: 'https://zigzag.kr/catalog/products/112164839',
+    src: 'https://r2.jjalbot.com/2023/03/fHNaadsy0V.jpeg',
+    title: '다시 골라봐 ㅎㅎ;;;',
+    url: '',
   },
   {
     src: malenka,
@@ -65,7 +60,7 @@ const Gift = (_: GiftProps) => {
     modalRef.current?.open()
   }
 
-  const gifts = Array.from({ length: 4 }, (_, i) => (
+  const gifts = Array.from({ length: 3 }, (_, i) => (
     <GiftItem key={i} id={i} onClick={clickHandler} />
   ))
 
@@ -75,9 +70,11 @@ const Gift = (_: GiftProps) => {
       <Modal title={giftContents[openedGiftId].title} ref={modalRef}>
         <div className='gift'>
           <img src={giftContents[openedGiftId].src} alt='생일 선물' />
-          <a href={giftContents[openedGiftId].url} target='_blank'>
-            자세히 보기
-          </a>
+          {giftContents[openedGiftId].url && (
+            <a href={giftContents[openedGiftId].url} target='_blank'>
+              자세히 보기
+            </a>
+          )}
         </div>
       </Modal>
     </ul>
