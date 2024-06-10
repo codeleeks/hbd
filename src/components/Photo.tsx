@@ -2,7 +2,6 @@ import { useCallback, useRef, useState } from 'react'
 
 import Webcam from 'react-webcam'
 import Modal, { ModalHandle } from './Modal'
-import html2canvas from 'html2canvas'
 interface PhotoProps {}
 
 const Photo = (_: PhotoProps) => {

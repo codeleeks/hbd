@@ -1,4 +1,4 @@
-import YouTube, { YouTubePlayer, YouTubeProps } from 'react-youtube'
+import YouTube, { YouTubeProps } from 'react-youtube'
 
 interface SongProps {}
 
@@ -9,7 +9,7 @@ const Song = (_: SongProps) => {
   }
 
   const onPlayerStateChange: YouTubeProps['onStateChange'] = (event) => {
-    if(event.data === YouTube.PlayerState.PLAYING ) {
+    if (event.data === YouTube.PlayerState.PLAYING) {
       setTimeout(() => {
         event.target.pauseVideo()
         event.target.seekTo(8699, true)
