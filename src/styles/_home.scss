@@ -15,6 +15,7 @@
   }
   .canvas {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
 
@@ -83,6 +84,19 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+.happy-moments {
+  .swiper-wrapper {
+    .happy-moment-slide {
+      display: flex;
+      justify-content: center;
+      img {
+        height: 200px;
+        object-fit: contain;
       }
     }
   }
