@@ -1,28 +1,44 @@
-import YouTube, { YouTubeProps } from 'react-youtube'
+import YouTube, { YouTubeEvent, YouTubeProps } from 'react-youtube'
+import { Autoplay } from 'swiper/modules'
+
+const playVideo = (event: YouTubeEvent<number>) => {
+  event.target.seekTo(8699)
+  event.target.playVideo()
+}
+
+const pauseVideo = (event: YouTubeEvent<number>) => {
+  event.target.seekTo(8699)
+  event.target.pauseVideo()
+}
 
 interface SongProps {}
 
+let replayTimer: NodeJS.Timeout | null = null
+
 const Song = (_: SongProps) => {
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    event.target.seekTo(8699, true)
-    event.target.playVideo()
+    event.target.seekTo(8699)
   }
-
   const onPlayerStateChange: YouTubeProps['onStateChange'] = (event) => {
+    console.log('changed! - ', event.data, event.target.getCurrentTime())
     if (event.data === YouTube.PlayerState.PLAYING) {
-      setTimeout(() => {
-        event.target.pauseVideo()
-        event.target.seekTo(8699, true)
+      console.log(replayTimer)
+      if (replayTimer) {
+        clearTimeout(replayTimer)
+        replayTimer = null
+      }
+      replayTimer = setTimeout(() => {
+        console.log('timeout')
+        playVideo(event)
       }, 35 * 1000)
+    } else {
+      event.target.seekTo(8699)
     }
   }
 
   const opts: YouTubeProps['opts'] = {
     width: '100%',
     height: '400px',
-    playerVars: {
-      start: 8699,
-    },
   }
 
   return (

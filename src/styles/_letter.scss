@@ -6,10 +6,11 @@
   align-items: center;
 
   .envelope {
-    $w: 300px;
+    $w: clamp(300px, 40vw, 600px);
+
     width: $w;
     height: $w;
-    margin-top: calc($w / 2);
+    margin-top: calc((100vh - $header-height) / 2 - $w / 2);
     margin-left: auto;
     margin-right: auto;
     position: relative;
