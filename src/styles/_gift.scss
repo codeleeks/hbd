@@ -1,8 +1,20 @@
 .gifts {
   height: calc(100vh - $header-height);
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+
+  h2 {
+    font-size: 28px;
+    text-align: center;
+    flex-shrink: 0;
+    margin: 20px 0;
+  }
+  .gifts__contents {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
   li {
     img {

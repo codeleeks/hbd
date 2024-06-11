@@ -1,5 +1,5 @@
 @import './styles/header', './styles/home', './styles/gift', './styles/dialog',
-  './styles/photo', './styles/song';
+  './styles/photo', './styles/song', './styles/letter';
 
 :root {
   font-family: 'Hi Melody', Inter, system-ui, Avenir, Helvetica, Arial,
@@ -25,8 +25,17 @@ button {
   border: none;
   background-color: transparent;
 }
+img {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
 .inner {
   max-width: 80%;
   margin: 0 auto;
+}
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

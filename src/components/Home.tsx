@@ -22,7 +22,7 @@ const Home = (_: HomeProps) => {
   return (
     <div className='heart inner'>
       <ul className='canvas'>
-        {[...Array(50)].map((_, i) => (
+        {[...Array(100)].map((_, i) => (
           <li key={i} className='star'></li>
         ))}
       </ul>

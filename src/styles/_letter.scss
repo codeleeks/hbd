@@ -1,0 +1,176 @@
+.letter {
+  width: 100%;
+  height: calc(100vh - $header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .envelope {
+    $w: 300px;
+    width: $w;
+    height: $w;
+    margin-top: calc($w / 2);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    background-color: #e87389;
+    .top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      transform-origin: top center;
+
+      &::before,
+      &::after {
+        content: '';
+        display: inline-block;
+        width: calc($w / 2);
+        height: calc($w / 2);
+        background-color: #f0919f;
+      }
+      &::before {
+        box-shadow: -3px 3px 1px rgba(10, 10, 10, 0.2);
+        border-radius: 0 0 0 20px;
+        transform: skew(10deg) translate(20px, 0);
+      }
+      &::after {
+        box-shadow: 3px 3px 1px rgba(10, 10, 10, 0.2);
+        border-radius: 0 0 20px 0;
+        transform: skew(-10deg) translate(-20px, 0);
+      }
+    }
+    &.--open {
+      .top {
+        animation: open-up 0.6s forwards linear;
+      }
+      .letter__contents {
+        animation: slide-up 0.6s 0.6s forwards linear;
+      }
+    }
+    @keyframes open-up {
+      0% {
+        transform: rotateX(0deg);
+      }
+      50% {
+        transform: rotateX(-90deg);
+      }
+      100% {
+        transform: rotateX(-180deg);
+      }
+    }
+    .bottom {
+      $bh: calc($w * 7 / 12);
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      width: $w;
+      height: $bh;
+
+      &::before,
+      &::after {
+        content: '';
+        display: inline-block;
+        width: calc($w / 2);
+        height: $bh;
+        background-color: #f0919f;
+      }
+      &::before {
+        box-shadow: -3px -3px 1px rgba(10, 10, 10, 0.2);
+        border-radius: 20px 0 0 0;
+        transform: skew(-10deg) translate(25px, 0);
+      }
+      &::after {
+        box-shadow: 3px -3px 1px rgba(10, 10, 10, 0.2);
+        border-radius: 0 20px 0 0;
+        transform: skew(10deg) translate(-25px, 0);
+      }
+    }
+    .circle {
+      $cw: 100px;
+      position: absolute;
+      top: calc($w / 2 - $cw / 2);
+      left: calc($w / 2 - $cw / 2);
+      z-index: 3;
+
+      @extend .center-flex;
+
+      width: $cw;
+      height: $cw;
+      border-radius: 50%;
+      background-color: #fff;
+
+      &::before {
+        content: '편지 보기';
+        @extend .center-flex;
+        width: 90%;
+        height: 90%;
+
+        border-radius: 50%;
+        background-color: #fff3db;
+
+        text-align: center;
+        font-weight: 700;
+        color: #9c8266;
+      }
+    }
+    .letter__contents {
+      $lw: clamp(180px, 40vw, 400px);
+      position: absolute;
+      left: calc($w / 2 - $lw / 2);
+      top: calc($w / 2 - $lw / 2);
+
+      width: $lw;
+      height: $lw;
+
+      .letter__contents__container {
+        .letter__contents__scroll-area {
+          overflow: auto;
+          height: $lw;
+
+          img {
+            width: 100%;
+            height: 200%;
+            object-fit: contain;
+          }
+        }
+      }
+
+      img {
+        width: $lw;
+        height: $lw;
+        object-fit: contain;
+      }
+    }
+    @keyframes slide-up {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        z-index: 4;
+        transform: translate(0, -100px) scale(1.5);
+      }
+      100% {
+        z-index: 4;
+        transform: translate(0, -200px) scale(2);
+        top: calc($w / 2);
+      }
+    }
+  }
+
+  // .letter__contents {
+  //   .letter__contents__scroll-area {
+  //     overflow: auto;
+  //     height: clamp(300px, 80vw, 800px);
+
+  //     img {
+  //       width: 100%;
+  //       height: 200%;
+  //       object-fit: contain;
+  //     }
+  //   }
+  // }
+}

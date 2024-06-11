@@ -27,6 +27,7 @@ const Song = (_: SongProps) => {
 
   return (
     <section className='song inner'>
+      <h2>유병재도 희주 생일 축하해줌~</h2>
       <YouTube
         videoId='9lAT1N1swVU'
         opts={opts}
