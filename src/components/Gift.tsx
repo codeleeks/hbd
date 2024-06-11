@@ -53,18 +53,18 @@ interface GiftProps {}
 const Gift = (_: GiftProps) => {
   const modalRef = useRef<ModalHandle>(null)
   const [openedGiftId, setOpenedGiftId] = useState<number>(-1)
-  const [countdown, setCountdown] = useState<number>(0)
+  // const [countdown, setCountdown] = useState<number>(0)
   const clickHandler = (id: number) => {
     setOpenedGiftId(id)
-    setCountdown(3)
+    // setCountdown(3)
     modalRef.current?.open()
 
-    const intervalTimer = setInterval(() => {
-      setCountdown((prev) => prev - 1)
-    }, 1000)
-    setTimeout(() => {
-      clearInterval(intervalTimer)
-    }, 3000)
+    // const intervalTimer = setInterval(() => {
+    //   setCountdown((prev) => prev - 1)
+    // }, 1000)
+    // setTimeout(() => {
+    //   clearInterval(intervalTimer)
+    // }, 3000)
   }
 
   const gifts = Array.from({ length: 3 }, (_, i) => (
@@ -76,27 +76,21 @@ const Gift = (_: GiftProps) => {
       <h2>선물을 하나만 골라봐~ 실제로 선물로 준다구!</h2>
       <ul className='gifts__contents'>{gifts}</ul>
       <Modal
-        title={
-          countdown <= 0 && openedGiftId > -1
-            ? giftContents[openedGiftId].title
-            : ''
-        }
+        title={openedGiftId > -1 ? giftContents[openedGiftId].title : ''}
         ref={modalRef}
       >
         <div className='gift'>
-          {countdown > 0 && (
+          {/* {countdown > 0 && (
             <span className='gift__countdown'>{countdown}</span>
-          )}
-          {countdown <= 0 && openedGiftId > -1 && (
+          )} */}
+          {openedGiftId > -1 && (
             <img src={giftContents[openedGiftId].src} alt='생일 선물' />
           )}
-          {countdown <= 0 &&
-            openedGiftId > -1 &&
-            giftContents[openedGiftId].url && (
-              <a href={giftContents[openedGiftId].url} target='_blank'>
-                자세히 보기
-              </a>
-            )}
+          {openedGiftId > -1 && giftContents[openedGiftId].url && (
+            <a href={giftContents[openedGiftId].url} target='_blank'>
+              자세히 보기
+            </a>
+          )}
         </div>
       </Modal>
     </div>
