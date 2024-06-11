@@ -1,14 +1,8 @@
 import YouTube, { YouTubeEvent, YouTubeProps } from 'react-youtube'
-import { Autoplay } from 'swiper/modules'
 
 const playVideo = (event: YouTubeEvent<number>) => {
   event.target.seekTo(8699)
   event.target.playVideo()
-}
-
-const pauseVideo = (event: YouTubeEvent<number>) => {
-  event.target.seekTo(8699)
-  event.target.pauseVideo()
 }
 
 interface SongProps {}
