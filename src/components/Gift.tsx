@@ -1,15 +1,15 @@
 import giftOpenImg from '../assets/gift-open.png'
 import giftNotOpenImg from '../assets/gift-not-open.png'
-import jillbyjillBackpack from '../assets/jillbyjill_backpack.jpg'
+import wonderrustBackpack from '../assets/wonderrust-backpack.png'
 import malenka from '../assets/malenka.png'
 import { useRef, useState } from 'react'
 import Modal, { ModalHandle } from './Modal'
 
 const giftContents = [
   {
-    src: jillbyjillBackpack,
-    title: '질바이질 백팩',
-    url: 'https://www.musinsa.com/app/goods/3781416',
+    src: wonderrustBackpack,
+    title: '룰루레몬 원더러스트 백팩',
+    url: 'https://www.lululemon.co.kr/ko-kr/p/%EC%9B%90%EB%8D%94%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%B0%B1%ED%8C%A9-25l/142177327.html?CID=ps_google_campaign_upper_dm_ko-kr_A_prospecting_newcampaign_pmax&gad_source=1&gclid=Cj0KCQjw4MSzBhC8ARIsAPFOuyVxw5mW-0syN1RKDFPMasJVxS6YAcMhjoDfcEYAO0el5F2piwfhg5EaAngzEALw_wcB',
   },
   {
     src: 'https://r2.jjalbot.com/2023/03/fHNaadsy0V.jpeg',
@@ -73,7 +73,7 @@ const Gift = (_: GiftProps) => {
 
   return (
     <div className='gifts inner'>
-      <h2>선물을 하나만 골라봐~ 실제로 선물로 준다구!</h2>
+      <h2>선물을 골라봐</h2>
       <ul className='gifts__contents'>{gifts}</ul>
       <Modal
         title={
